@@ -1,0 +1,16 @@
+https://sourceforge.net/projects/xampp/
+
+vs code
+test de phpinfo
+
+cdm> composer laravel
+
+composer create-project laravel/laravel app-laravel
+
+https://github.com/EdenilsonBatres
+
+dentro de carpeta
+php artisan serve
+
+.env
+    informacion de la conexion a la base de datos

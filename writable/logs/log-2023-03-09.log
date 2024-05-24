@@ -1,0 +1,112 @@
+CRITICAL - 2023-03-09 16:50:05 --> Class 'App\Controllers\BaseController' not found
+in APPPATH\Controllers\Home.php on line 5.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(312): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 5 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 6 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 7 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-09 16:52:31 --> Invalid file: "initPages.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('initPages.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('initPages', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('initPages')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-09 16:55:02 --> Invalid file: "commons/header.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('commons/header.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('commons/header', [], true)
+ 3 APPPATH\Views\initPage.php(1): view('commons/header')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\initPage.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('initPage', [], true)
+ 7 APPPATH\Controllers\Home.php(9): view('initPage')
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-09 21:14:11 --> Class 'App\Controllers\App\BaseApi' not found
+in APPPATH\Controllers\Cliente.php on line 5.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(312): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Cliente.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Cliente')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Cliente')
+ 5 [internal function]: spl_autoload_call('App\\Controllers\\Cliente')
+ 6 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Cliente', true)
+ 7 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-09 21:19:40 --> Array to string conversion
+in APPPATH\Controllers\Cliente.php on line 22.
+ 1 APPPATH\Controllers\Cliente.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'APPPATH\\Controllers\\Cliente.php', 22, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->registro()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-09 22:51:39 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`db_carnaval`.`cliente`, CONSTRAINT `fk_cliente_categoria` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`)) in C:\PersonalServer\htdocs\carnaval_sys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\PersonalServer\htdocs\carnaval_sys\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cl...', 0)
+#1 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cl...')
+#2 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cl...')
+#3 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cl...', Array, false)
+#4 C:\PersonalServer\htdocs\carnaval_sys\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\PersonalServer\htdocs\carnaval_sys\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\PersonalServer\htdocs\carnaval_sys\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\PersonalServer\htdocs\carnaval_sys\app\Controllers\Cliente.php(33): CodeIgniter\Model->insert(Array)
+#8 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(934): App\Controllers\Cliente->registro()
+#9 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#10 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\PersonalServer\htdocs\carnaval_sys\index.php(66): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-09 22:51:39 --> Cannot add or update a child row: a foreign key constraint fails (`db_carnaval`.`cliente`, CONSTRAINT `fk_cliente_categoria` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`))
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cliente` (`nombre`, `apellido`, `direccion`, `fecha_nacimiento`, `telefono`, `email`, `id_categoria`, `estatus`) VALUES (:nombre:, :apellido:, :direccion:, :fecha_nacimiento:, :telefono:, :email:, :id_categoria:, :estatus:)', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Cliente.php(33): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->registro()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-09 23:11:11 --> Argument 2 passed to CodeIgniter\RESTful\ResourceController::respond() must be of the type int or null, string given, called in C:\PersonalServer\htdocs\carnaval_sys\app\Controllers\Cliente.php on line 46
+in SYSTEMPATH\API\ResponseTrait.php on line 90.
+ 1 APPPATH\Controllers\Cliente.php(46): CodeIgniter\RESTful\ResourceController->respond([...], 'clientes leidos exitosamente', 200)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->readClient()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-09 23:13:16 --> Argument 2 passed to CodeIgniter\RESTful\ResourceController::respond() must be of the type int or null, string given, called in C:\PersonalServer\htdocs\carnaval_sys\app\Controllers\Cliente.php on line 46
+in SYSTEMPATH\API\ResponseTrait.php on line 90.
+ 1 APPPATH\Controllers\Cliente.php(46): CodeIgniter\RESTful\ResourceController->respond([...], 'clientes leidos exitosamente', 200)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->readClient()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-09 23:13:57 --> Argument 2 passed to CodeIgniter\RESTful\ResourceController::respond() must be of the type int or null, string given, called in C:\PersonalServer\htdocs\carnaval_sys\app\Controllers\Cliente.php on line 46
+in SYSTEMPATH\API\ResponseTrait.php on line 90.
+ 1 APPPATH\Controllers\Cliente.php(46): CodeIgniter\RESTful\ResourceController->respond([...], 'clientes leidos exitosamente', 200)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->readClient()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-09 23:14:59 --> Argument 2 passed to CodeIgniter\RESTful\ResourceController::respond() must be of the type int or null, string given, called in C:\PersonalServer\htdocs\carnaval_sys\app\Controllers\Cliente.php on line 45
+in SYSTEMPATH\API\ResponseTrait.php on line 90.
+ 1 APPPATH\Controllers\Cliente.php(45): CodeIgniter\RESTful\ResourceController->respond([...], 'clientes leidos exitosamente', 200)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->readClient()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-09 23:16:06 --> Argument 2 passed to CodeIgniter\RESTful\ResourceController::respond() must be of the type int or null, string given, called in C:\PersonalServer\htdocs\carnaval_sys\app\Controllers\Cliente.php on line 46
+in SYSTEMPATH\API\ResponseTrait.php on line 90.
+ 1 APPPATH\Controllers\Cliente.php(46): CodeIgniter\RESTful\ResourceController->respond([...], 'clientes leidos exitosamente', 200)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->readClient()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()

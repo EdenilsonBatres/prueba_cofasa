@@ -1,0 +1,149 @@
+CRITICAL - 2023-03-10 03:56:34 --> Undefined index: id_categoria
+in APPPATH\Controllers\Cliente.php on line 30.
+ 1 APPPATH\Controllers\Cliente.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: id_categoria', 'APPPATH\\Controllers\\Cliente.php', 30, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->registro()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 06:21:52 --> Array to string conversion
+in APPPATH\Controllers\Factura.php on line 22.
+ 1 APPPATH\Controllers\Factura.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'APPPATH\\Controllers\\Factura.php', 22, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Factura->cargandoClientes()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Factura))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 06:36:56 --> syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+in APPPATH\Controllers\Factura.php on line 94.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Factura.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Factura')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Factura')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Factura')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Factura', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-10 07:00:47 --> mysqli_sql_exception: Table 'db_carnaval.clientes' doesn't exist in C:\PersonalServer\htdocs\carnaval_sys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\PersonalServer\htdocs\carnaval_sys\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `id_fact...', 0)
+#1 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_fact...')
+#2 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_fact...')
+#3 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id_fact...', Array, false)
+#4 C:\PersonalServer\htdocs\carnaval_sys\app\Models\facturasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\PersonalServer\htdocs\carnaval_sys\app\Controllers\Factura.php(94): App\Models\facturasModel->leyendoFactura()
+#6 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(934): App\Controllers\Factura->readFactura()
+#7 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Factura))
+#8 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\PersonalServer\htdocs\carnaval_sys\index.php(66): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-03-10 07:00:47 --> Table 'db_carnaval.clientes' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id_factura`, `id_cliente`, `nombre`, `fecha`
+FROM `factura`
+JOIN `clientes` ON `factura`.`id_cliente` = `clientes`.`id_cliente`
+WHERE `estatus` = :estatus:', [...], false)
+ 2 APPPATH\Models\facturasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Factura.php(94): App\Models\facturasModel->leyendoFactura()
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Factura->readFactura()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Factura))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-10 07:01:07 --> mysqli_sql_exception: Unknown column 'id_factura' in 'field list' in C:\PersonalServer\htdocs\carnaval_sys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\PersonalServer\htdocs\carnaval_sys\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `id_fact...', 0)
+#1 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_fact...')
+#2 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_fact...')
+#3 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id_fact...', Array, false)
+#4 C:\PersonalServer\htdocs\carnaval_sys\app\Models\facturasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\PersonalServer\htdocs\carnaval_sys\app\Controllers\Factura.php(94): App\Models\facturasModel->leyendoFactura()
+#6 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(934): App\Controllers\Factura->readFactura()
+#7 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Factura))
+#8 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\PersonalServer\htdocs\carnaval_sys\index.php(66): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-03-10 07:01:07 --> Unknown column 'id_factura' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id_factura`, `id_cliente`, `nombre`, `fecha`
+FROM `factura`
+JOIN `cliente` ON `factura`.`id_cliente` = `clientes`.`id_cliente`
+WHERE `estatus` = :estatus:', [...], false)
+ 2 APPPATH\Models\facturasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Factura.php(94): App\Models\facturasModel->leyendoFactura()
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Factura->readFactura()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Factura))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-10 07:01:30 --> mysqli_sql_exception: Column 'id_cliente' in field list is ambiguous in C:\PersonalServer\htdocs\carnaval_sys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\PersonalServer\htdocs\carnaval_sys\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `num_fac...', 0)
+#1 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `num_fac...')
+#2 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `num_fac...')
+#3 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `num_fac...', Array, false)
+#4 C:\PersonalServer\htdocs\carnaval_sys\app\Models\facturasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\PersonalServer\htdocs\carnaval_sys\app\Controllers\Factura.php(94): App\Models\facturasModel->leyendoFactura()
+#6 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(934): App\Controllers\Factura->readFactura()
+#7 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Factura))
+#8 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\PersonalServer\htdocs\carnaval_sys\index.php(66): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-03-10 07:01:30 --> Column 'id_cliente' in field list is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `num_factura`, `id_cliente`, `nombre`, `fecha`
+FROM `factura`
+JOIN `cliente` ON `factura`.`id_cliente` = `clientes`.`id_cliente`
+WHERE `estatus` = :estatus:', [...], false)
+ 2 APPPATH\Models\facturasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Factura.php(94): App\Models\facturasModel->leyendoFactura()
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Factura->readFactura()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Factura))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-10 07:01:50 --> mysqli_sql_exception: Column 'estatus' in where clause is ambiguous in C:\PersonalServer\htdocs\carnaval_sys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\PersonalServer\htdocs\carnaval_sys\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `num_fac...', 0)
+#1 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `num_fac...')
+#2 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `num_fac...')
+#3 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `num_fac...', Array, false)
+#4 C:\PersonalServer\htdocs\carnaval_sys\app\Models\facturasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\PersonalServer\htdocs\carnaval_sys\app\Controllers\Factura.php(94): App\Models\facturasModel->leyendoFactura()
+#6 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(934): App\Controllers\Factura->readFactura()
+#7 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Factura))
+#8 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\PersonalServer\htdocs\carnaval_sys\index.php(66): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-03-10 07:01:50 --> Column 'estatus' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `num_factura`, `cliente`.`id_cliente`, `nombre`, `fecha`
+FROM `factura`
+JOIN `cliente` ON `factura`.`id_cliente` = `clientes`.`id_cliente`
+WHERE `estatus` = :estatus:', [...], false)
+ 2 APPPATH\Models\facturasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Factura.php(94): App\Models\facturasModel->leyendoFactura()
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Factura->readFactura()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Factura))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-10 07:02:11 --> mysqli_sql_exception: Unknown column 'clientes.id_cliente' in 'on clause' in C:\PersonalServer\htdocs\carnaval_sys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\PersonalServer\htdocs\carnaval_sys\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `num_fac...', 0)
+#1 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `num_fac...')
+#2 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `num_fac...')
+#3 C:\PersonalServer\htdocs\carnaval_sys\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `num_fac...', Array, false)
+#4 C:\PersonalServer\htdocs\carnaval_sys\app\Models\facturasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\PersonalServer\htdocs\carnaval_sys\app\Controllers\Factura.php(94): App\Models\facturasModel->leyendoFactura()
+#6 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(934): App\Controllers\Factura->readFactura()
+#7 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Factura))
+#8 C:\PersonalServer\htdocs\carnaval_sys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\PersonalServer\htdocs\carnaval_sys\index.php(66): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-03-10 07:02:11 --> Unknown column 'clientes.id_cliente' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `num_factura`, `cliente`.`id_cliente`, `nombre`, `fecha`
+FROM `factura`
+JOIN `cliente` ON `factura`.`id_cliente` = `clientes`.`id_cliente`
+WHERE `factura`.`estatus` = :factura.estatus:', [...], false)
+ 2 APPPATH\Models\facturasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Factura.php(94): App\Models\facturasModel->leyendoFactura()
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Factura->readFactura()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Factura))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(66): CodeIgniter\CodeIgniter->run()

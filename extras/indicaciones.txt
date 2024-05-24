@@ -14,3 +14,5 @@ php artisan serve
 
 .env
     informacion de la conexion a la base de datos
+
+    https://github.com/EdenilsonBatres/prueba_cofasa.git
